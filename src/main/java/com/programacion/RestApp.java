@@ -1,4 +1,8 @@
 package com.programacion;
 
-public class RestApp {
+import javax.ws.rs.ApplicationPath;
+import javax.ws.rs.core.Application;
+
+@ApplicationPath("/")
+public class RestApp extends Application {
 }
