@@ -5,12 +5,15 @@ import com.programacion.services.ServicioPersona;
 import com.programacion.services.ServicioPersonaImpl;
 import org.jboss.resteasy.annotations.jaxrs.PathParam;
 
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
 
 @Path("/personas")
+@ApplicationScoped
 public class PersonaRest {
 
     /**
@@ -21,7 +24,9 @@ public class PersonaRest {
      * POST /personas
      */
 
-    static ServicioPersona servicio = new ServicioPersonaImpl();
+    @Inject
+    private ServicioPersona servicio;
+    //static ServicioPersona servicio = new ServicioPersonaImpl();
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)

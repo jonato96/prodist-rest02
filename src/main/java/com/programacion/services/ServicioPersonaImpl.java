@@ -2,11 +2,12 @@ package com.programacion.services;
 
 import com.programacion.db.Persona;
 
+import javax.enterprise.context.ApplicationScoped;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+@ApplicationScoped
 public class ServicioPersonaImpl implements ServicioPersona{
 
     private Map<Integer, Persona> personas = new HashMap<>();
